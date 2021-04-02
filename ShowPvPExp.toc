@@ -1,0 +1,7 @@
+## Interface: 90005
+## Title: ShowPvPExp
+## Notes: Show pvp rating without open inspect window.
+## Author: Hermanyo H.
+## Version: 1.4 
+
+ShowPvPExp.lua
