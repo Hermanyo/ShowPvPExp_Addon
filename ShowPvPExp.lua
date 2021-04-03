@@ -1,5 +1,5 @@
 ---@diagnostic disable: undefined-global
-local __DEV__ = true; -- to debugging
+local __DEV__ = false; -- to debugging
 local bracketsNames = {"2v2", "3v3", "5v5", "RBG"}
 local achievements = {370, 595, 596, nil}
 local showErrorMessage = false;
@@ -130,22 +130,14 @@ local function ShowPvPExp_OnEvent(self, event, unit,  arg1, arg2)
         ClearAchievementComparisonUnit();
         ClearInspectPlayer();
         SetAchievementComparisonUnit(unit);
-        NotifyInspect(unit)  
-    -- elseif(event == "MODIFIER_STATE_CHANGED" and self:IsVisible() and arg1 == "LCTRL") then  --TODO
-    --     ClearAchievementComparisonUnit();
-    --     ClearInspectPlayer();
-    --     SetAchievementComparisonUnit(unit);
-    --     NotifyInspect(unit);  
+        NotifyInspect(unit)   
     end 
 end
 
 local function ShowPvPExp_CheckIfCanInteractWithUnit(self, event, arg1, arg2)
     local _, unit = self:GetUnit();
     if (UnitExists(unit) and CanInspect(unit, false)) then
-        ShowPvPExp_OnEvent(self, event, unit, arg1, arg2);
-    else 
-        tooltip:AddLine("PvPExp - ", 1, 1, 1) 
-        tooltip:Show();
+        ShowPvPExp_OnEvent(self, event, unit, arg1, arg2); 
     end
 end
 
