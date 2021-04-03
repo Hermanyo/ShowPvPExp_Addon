@@ -2,6 +2,6 @@
 ## Title: ShowPvPExp
 ## Notes: Show pvp rating without open inspect window.
 ## Author: Hermanyo H.
-## Version: 1.4 
+## Version: 1.6 
 
 ShowPvPExp.lua
