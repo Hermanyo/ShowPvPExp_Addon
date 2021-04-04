@@ -5,6 +5,18 @@ local achievements = {370, 595, 596, nil}
 local showErrorMessage = false;
 local LocalGameTooltip = GameTooltip;
 
+local function Init(self, event, ...)
+	if ( event == "PLAYER_ENTERING_WORLD" ) then
+		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
+		DEFAULT_CHAT_FRAME:AddMessage(string.format("|cff00ffffShowPvPExp v" .. GetAddOnMetadata("ShowPvPExp","Version") .. "loaded"))
+	end
+end
+
+local InitFrame = CreateFrame("Frame")
+InitFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+InitFrame:SetScript("OnEvent", Init)
+
+
 -- local function Ternary ( cond , T , F ) // Ternay comparison
 --     if cond then return T else return F end
 -- end
